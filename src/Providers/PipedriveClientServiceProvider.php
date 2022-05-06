@@ -21,9 +21,10 @@ class PipedriveClientServiceProvider extends VersionablePackageServiceProvider
     protected function addToRegister(): void
     {
         $this->app->bind(OrganizationApiContract::class, function(Application $app) {
-            return $app->make(ClientContract::class, ['credential' => new PipedriveCredential()]);
+            $client = $app->make(ClientContract::class, ['credential' => new PipedriveCredential()]);
+            return $app->make(Organization::class, ['client' => $client]);
         });
-        
+
         $this->app->bind(OrganizationContract::class, Organization::class);
     }
 
