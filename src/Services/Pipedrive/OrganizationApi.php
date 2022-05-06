@@ -43,7 +43,7 @@ class OrganizationApi implements OrganizationApiContract
             return null;
         endif;
 
-        return $this->toOrganization($response->response()->data);
+        return $this->toOrganization($response->response()->get()->data);
     }
 
     /**
@@ -56,7 +56,11 @@ class OrganizationApi implements OrganizationApiContract
     {
         $request = $this->newRequest()
             ->setVerb('PUT')
-            ->setUrl("organizations/{$organization->getId()}");
+            ->setUrl("organizations/{$organization->getId()}")
+            ->addData([
+                'name' => $organization->getName(),
+                'label' => $organization->getLabel()
+            ]);
 
         $response = $this->client->try($request, "Unable to update organization [{$organization->getId()}].");
 
@@ -65,7 +69,7 @@ class OrganizationApi implements OrganizationApiContract
             return null;
         endif;
 
-        return $this->toOrganization($response->response()->data);
+        return $this->toOrganization($response->response()->get()->data);
     }
 
     /**

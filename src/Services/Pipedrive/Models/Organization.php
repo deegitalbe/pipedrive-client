@@ -68,7 +68,7 @@ class Organization implements OrganizationContract
      * 
      * @return bool
      */
-    public function isActiveClient(): bool
+    public function isActive(): bool
     {
         return $this->getLabel() === $this->activeLabel;
     }
@@ -104,9 +104,19 @@ class Organization implements OrganizationContract
      * 
      * @return static
      */
-    public function setAsActiveClient(): OrganizationContract
+    public function setAsActive(): OrganizationContract
     {
         return $this->setLabel($this->activeLabel);
+    }
+
+    /**
+     * Deactivating organization.
+     * 
+     * @return static
+     */
+    public function setAsInactive(): OrganizationContract
+    {
+        return $this->setLabel(null);
     }
 
     /**

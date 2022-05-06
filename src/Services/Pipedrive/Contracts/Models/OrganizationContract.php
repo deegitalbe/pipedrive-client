@@ -39,7 +39,7 @@ interface OrganizationContract
      * 
      * @return bool
      */
-    public function isActiveClient(): bool;
+    public function isActive(): bool;
 
     /**
      * Setting name.
@@ -62,5 +62,12 @@ interface OrganizationContract
      * 
      * @return static
      */
-    public function setAsActiveClient(): OrganizationContract;
+    public function setAsActive(): OrganizationContract;
+
+    /**
+     * Deactivating organization.
+     * 
+     * @return static
+     */
+    public function setAsInactive(): OrganizationContract;
 }
