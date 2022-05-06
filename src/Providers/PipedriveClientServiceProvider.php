@@ -22,7 +22,7 @@ class PipedriveClientServiceProvider extends VersionablePackageServiceProvider
     {
         $this->app->bind(OrganizationApiContract::class, function(Application $app) {
             $client = $app->make(ClientContract::class, ['credential' => new PipedriveCredential()]);
-            return $app->make(Organization::class, ['client' => $client]);
+            return $app->make(OrganizationApi::class, ['client' => $client]);
         });
 
         $this->app->bind(OrganizationContract::class, Organization::class);
