@@ -1,5 +1,5 @@
 {
-    "name": "henrotaym/versioning-package-template",
+    "name": "deegitalbe/pipedrive-client",
     "description": "Basic versioned php package.",
     "type": "library",
     "license": "MIT",
@@ -18,18 +18,18 @@
     },
     "autoload": {
         "psr-4": {
-            "Henrotaym\\VersioningPackageTemplate\\": "src"
+            "Deegitalbe\\PipedriveClient\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Henrotaym\\VersioningPackageTemplate\\Tests\\": "tests"
+            "Deegitalbe\\PipedriveClient\\Tests\\": "tests"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Henrotaym\\VersioningPackageTemplate\\Providers\\VersioningPackageTemplateServiceProvider"
+                "Deegitalbe\\PipedriveClient\\Providers\\PipedriveClientServiceProvider"
             ]
         }
     }

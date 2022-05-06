@@ -1,13 +1,13 @@
 <?php
-namespace Henrotaym\VersioningPackageTemplate;
+namespace Deegitalbe\PipedriveClient;
 
-use Henrotaym\VersioningPackageTemplate\Contracts\PackageContract;
+use Deegitalbe\PipedriveClient\Contracts\PackageContract;
 use Henrotaym\LaravelPackageVersioning\Services\Versioning\VersionablePackage;
 
 class Package extends VersionablePackage implements PackageContract
 {
     public static function prefix(): string
     {
-        return "versioning_package_template";
+        return "pipedrive_client";
     }
 }

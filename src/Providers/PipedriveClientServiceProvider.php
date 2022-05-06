@@ -1,10 +1,10 @@
 <?php
-namespace Henrotaym\VersioningPackageTemplate\Providers;
+namespace Deegitalbe\PipedriveClient\Providers;
 
-use Henrotaym\VersioningPackageTemplate\Package;
+use Deegitalbe\PipedriveClient\Package;
 use Henrotaym\LaravelPackageVersioning\Providers\Abstracts\VersionablePackageServiceProvider;
 
-class VersioningPackageTemplateServiceProvider extends VersionablePackageServiceProvider
+class PipedriveClientServiceProvider extends VersionablePackageServiceProvider
 {
     public static function getPackageClass(): string
     {
