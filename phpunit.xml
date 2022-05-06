@@ -29,6 +29,7 @@
   <php>
     <env name="DB_CONNECTION" value="testing"/>
     <env name="APP_KEY" value="base64:2fl+Ktvkfl+Fuz4Qp/A75G2RTiWVA/ZoKZvp6fiiM10="/>
-    <env name="APP_ENV" value="local"/>
+    <env name="PIPEDRIVE_API_KEY" value="591895ef0b3c0f5bdd4b36f1f1f94c08ef109141"/>
+    <env name="PIPEDRIVE_API_URL" value="https://api.pipedrive.com/v1"/>
   </php>
 </phpunit>

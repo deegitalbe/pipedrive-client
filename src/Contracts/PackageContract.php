@@ -9,5 +9,17 @@ use Henrotaym\LaravelContainerAutoRegister\Services\AutoRegister\Contracts\AutoR
  */
 interface PackageContract extends VersionablePackageContract, AutoRegistrableContract
 {
-    
+    /**
+     * Getting api key from config.
+     * 
+     * @return string
+     */
+    public function getApiToken(): string;
+
+    /**
+     * Getting api url from config.
+     * 
+     * @return string
+     */
+    public function getApiUrl(): string;
 }

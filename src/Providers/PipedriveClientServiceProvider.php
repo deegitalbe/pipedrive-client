@@ -2,7 +2,14 @@
 namespace Deegitalbe\PipedriveClient\Providers;
 
 use Deegitalbe\PipedriveClient\Package;
+use Deegitalbe\PipedriveClient\Services\Pipedrive\Contracts\Models\OrganizationContract;
+use Deegitalbe\PipedriveClient\Services\Pipedrive\Contracts\OrganizationApiContract;
+use Deegitalbe\PipedriveClient\Services\Pipedrive\Credentials\PipedriveCredential;
+use Deegitalbe\PipedriveClient\Services\Pipedrive\Models\Organization;
+use Deegitalbe\PipedriveClient\Services\Pipedrive\OrganizationApi;
+use Henrotaym\LaravelApiClient\Contracts\ClientContract;
 use Henrotaym\LaravelPackageVersioning\Providers\Abstracts\VersionablePackageServiceProvider;
+use Illuminate\Foundation\Application;
 
 class PipedriveClientServiceProvider extends VersionablePackageServiceProvider
 {
@@ -13,7 +20,11 @@ class PipedriveClientServiceProvider extends VersionablePackageServiceProvider
 
     protected function addToRegister(): void
     {
-        //
+        $this->app->bind(OrganizationApiContract::class, function(Application $app) {
+            return $app->make(ClientContract::class, ['credential' => new PipedriveCredential()]);
+        });
+        
+        $this->app->bind(OrganizationContract::class, Organization::class);
     }
 
     protected function addToBoot(): void

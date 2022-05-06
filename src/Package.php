@@ -10,4 +10,24 @@ class Package extends VersionablePackage implements PackageContract
     {
         return "pipedrive_client";
     }
+
+    /**
+     * Getting api key from config.
+     * 
+     * @return string
+     */
+    public function getApiToken(): string
+    {
+        return $this->getConfig('pipedrive.token');
+    }
+
+    /**
+     * Getting api url from config.
+     * 
+     * @return string
+     */
+    public function getApiUrl(): string
+    {
+        return $this->getConfig('pipedrive.url');
+    }
 }
